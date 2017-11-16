@@ -1,4 +1,18 @@
 body {
-  background-color: #fff;
-  color: #ccc;
+  background-color: #ccc;
+  color: #fff;
+  max-width: 1200px;
+}
+
+header {
+  text-align: center;
+}
+
+.song {
+  text-align: center;
+  padding: 10px;
+}
+
+.song .title {
+  font-size: 20px;
 }
