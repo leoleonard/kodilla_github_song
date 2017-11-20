@@ -6,11 +6,13 @@
   "scripts": {
     "test": "npm run test:html",
     "test:html": "nu-html-checker *.html",
+    "build:clean": "rimraf css",
     "build": "npm run build:sass && npm run build:autoprefixer && npm run test",
     "build:sass": "sass --sourcemap=none --update sass:css",
     "build:autoprefixer": "autoprefixer-cli css/style.css",
-    "watch": "parallelshell \"npm run watch:sass\" \"npm run watch:autoprefixer\" ",
-    "watch:sass": "sass --watch css/style.scss:css/style.cs ",
+
+    "watch": "parallelshell \"npm run watch:sass\" \"npm run watch:autoprefixer\"",
+    "watch:sass": "sass --watch css/style.scss:css/style.css",
     "watch:autoprefixer": "onchange -d 100 css/style.css -- autoprefixer-cli -o css/style.prefixed.css css/style.css"
   },
   "repository": {
@@ -29,6 +31,7 @@
     "browser-sync": "^2.18.13",
     "nu-html-checker": "^0.1.0",
     "onchange": "^3.2.1",
-    "parallelshell": "^3.0.2"
+    "parallelshell": "^3.0.2",
+    "rimraf": "^2.6.2"
   }
 }
